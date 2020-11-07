@@ -1,7 +1,7 @@
 import time
 import informacoes
 import quests
-import quests
+
 
 loop = 'voltar ao inicio'
 while loop == 'voltar ao inicio':
