@@ -8,18 +8,24 @@ def all_quests():
     iniciou_hora_quest1 = iniciou_contagem.tm_hour
     iniciou_minuto_quest1 = iniciou_contagem.tm_min
     iniciou_segundo_quest1 = iniciou_contagem.tm_sec
+    print()
     print('=' *51)
-    print('                       QUIZ')
-    print('                Seja Bem - Vind@!')
+    print('=-=-=-=-=-=-=-=- Seja Bem - Vind@! =-=-=-=-=-=-=-=-')
+    print('=-=-=-=-=-=-=-=-=-=-=-= AO =-=-=-=-=-=-=-=-=-=-=-=-')
+    print('=-==-=-=-=-=-=-=-=-=-= QUIZ =-=-=-=-=-=-=-=-=-=-=-=')
     print('=' *51)
     print()
+    time.sleep(2)
     print('=' *51)
     print('                     QUESTÃO 1!')
     print()
-    print('Escolha um')
-    print('[1]- Gato')
-    print('[2]- Cachorro')
-    print('[2]- Cavalo')
+    pontuacao = 0
+    print(f'Pontuação atual: {pontuacao}')
+    print('Em uma situação de risco de vida escolha:')
+    print('[1]- Lutar para sobreviver como o risco de morrer\nantes do que o esperado')
+    print('[2]- Deixar que a morte venha e não fazer nada')
+    print('[3]- Pedir ajuda')
+    print('[4]- Outro')
     res1 = str(input('Digite aqui: '))
     fim_contagem =  time.localtime()
     fim_ano_quest_1 = fim_contagem.tm_year
@@ -28,6 +34,21 @@ def all_quests():
     fim_hora_quest_1 = fim_contagem.tm_hour
     fim_minuto_quest_1 = fim_contagem.tm_min
     fim_segundo_quest_1 = fim_contagem.tm_sec
+    if res1 == '1':
+        pontuacao += 10
+    elif res1 == '2':
+        pontuacao += 1
+    elif res1 == '3':
+        pontuacao += 100
+    elif res1 == '4':
+        pessoal_quest1 = str(input('Qual? '))
+    else:
+        print('Comando inválido')
+
+
+
+
+    # FIM DO QUIZ
     print('=' *51)
     print('[1]- Para ver os dados do Cliente')
     print('[2]- Para ver os dados do Criador')
