@@ -5,7 +5,6 @@ import quest1
 import quest2
 import fim_quiz
 
-
 loop = 'voltar ao inicio'
 while loop == 'voltar ao inicio':
     print('=' *51)
@@ -26,6 +25,7 @@ while loop == 'voltar ao inicio':
         quest1.quest1()
         quest2.quest2()
         fim_quiz.fim_quiz()
+        
     else:
         print('Comando Inválido!')
         loop = 'voltar ao inicio'

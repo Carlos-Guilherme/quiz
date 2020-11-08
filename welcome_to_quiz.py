@@ -3,7 +3,6 @@ import time
 pontuacao = 0
 def welcome_to_quiz():
     print()
-    print('=' *51)
     print('=-=-=-=-=-=-=-=- Seja Bem - Vind@! =-=-=-=-=-=-=-=-')
     time.sleep(1)
     print('=-=-=-=-=-=-=-=-=-=-=-= AO =-=-=-=-=-=-=-=-=-=-=-=-')

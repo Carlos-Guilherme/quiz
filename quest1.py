@@ -1,7 +1,9 @@
 import time
 import welcome_to_quiz
+import fim_quiz
 
 def quest1():
+    comando_invalido_quest1 = 0
     loop_quest1 = 1
     while loop_quest1 == 1:
         iniciou_contagem_quest1 = time.localtime()
@@ -11,12 +13,10 @@ def quest1():
         iniciou_hora_quest1 = iniciou_contagem_quest1.tm_hour
         iniciou_minuto_quest1 = iniciou_contagem_quest1.tm_min
         iniciou_segundo_quest1 = iniciou_contagem_quest1.tm_sec
-        print('=' *51)
+        print()
         print('                     QUESTÃO 1!')
         print()
-        comando_invalido_quest1 = 0
         print(f'Pontuação atual: {welcome_to_quiz.pontuacao}')
-        print()
         print('Em uma situação de risco de vida escolha:')
         print('[1]- Lutar para sobreviver como o risco de morrer\nantes do que o esperado')
         print('[2]- Deixar que a morte venha e não fazer nada')
@@ -37,10 +37,17 @@ def quest1():
         elif res1 == '3':
             welcome_to_quiz.pontuacao += 100
         elif res1 == '4':
+            pessoal_quest1 = ''
             pessoal_quest1 = str(input('Qual? '))
+        elif res1 == 'fim':
+            fim_quiz.fim_quiz()
         else:
             print('Comando inválido!')
             comando_invalido_quest1 += 1
-            loop_quest1 = 0
+            loop_quest1 = 1
         time.sleep(1)
-        loop_quest1 = 0    
+        break
+
+
+
+
