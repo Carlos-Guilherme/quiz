@@ -1,4 +1,6 @@
+import matplotlib.pyplot as plt
 import time
+
 def quests():
         comando_invalido_quest1 = 0
         loop_quest1 = 1
@@ -14,7 +16,6 @@ def quests():
             print('                     QUESTÃO 1!')
             print()
             pontuacao_quest1 = 0
-            print(f'Pontuação atual: {pontuacao_quest1}')
             print('Em uma situação de risco de vida escolha:')
             print('[1]- Lutar para sobreviver como o risco de morrer\nantes do que o esperado')
             print('[2]- Deixar que a morte venha e não fazer nada')
@@ -59,9 +60,6 @@ def quests():
             print()
             print('                     QUESTÃO 2!')
             print()
-            pontuacao_quest2 = 0
-            pontuacao_quest2 += pontuacao_quest1
-            print(f'Pontuação atual: {pontuacao_quest2}')
             print('Escolha o melhor animal de estimação:')
             print('[1]- Gat@(s)')
             print('[2]- Cachorr@(s)')
@@ -77,10 +75,13 @@ def quests():
             fim_minuto_quest_2 = fim_contagem_quest2.tm_min
             fim_segundo_quest_2 = fim_contagem_quest2.tm_sec
             if res2 == '1':
+                pontuacao_quest2 = 0
                 pontuacao_quest2 += 100
             elif res2 == '2':
+                pontuacao_quest2 = 0
                 pontuacao_quest2 += 10
             elif res2 == '3':
+                pontuacao_quest2 = 0
                 pontuacao_quest2 += 1
             elif res2 == '4':
                 pessoal_quest2 = str(input('Qual? '))
@@ -105,9 +106,7 @@ def quests():
             print()
             print('                     QUESTÃO 3!')
             print()
-            pontuacao_quest3 = 0
-            pontuacao_quest3 += pontuacao_quest2
-            print(f'Pontuação atual: {pontuacao_quest3}')
+            pontuacao_quest3 = pontuacao_quest2
             print('Escolha:')
             print('[1]- Interestelar')
             print('[2]- Star Wars*')
@@ -123,10 +122,13 @@ def quests():
             fim_minuto_quest_3 = fim_contagem_quest3.tm_min
             fim_segundo_quest_3 = fim_contagem_quest3.tm_sec
             if res3 == '1':
+                pontuacao_quest3 = 0
                 pontuacao_quest3 += 100
             elif res3 == '2':
+                pontuacao_quest3 = 0
                 pontuacao_quest3 += 10
             elif res3 == '3':
+                pontuacao_quest3 = 0
                 pontuacao_quest3 += 1
             elif res3 == '4':
                 pessoal_quest3 = str(input('Qual? '))
@@ -166,6 +168,7 @@ def quests():
                     print(f'Resposta própria: {pessoal_quest1}') 
                     print()
                     print(f'Comandos inválidos: {comando_invalido_quest1}')
+                    plt.show()
                     print('=' *51)
                     print()
                     print('=' *51)
@@ -178,7 +181,7 @@ def quests():
                     print(f'Hora final: {fim_hora_quest_2}:{fim_minuto_quest_2}:{fim_segundo_quest_1}')
                     print()
                     print(f'Resposta da Questão: {res2}')
-                    print(f'Potuação Atual: {pontuacao_quest2}')
+                    print(f'Potuação da Questão: {pontuacao_quest2}')
                     print(f'Resposta própria: {pessoal_quest2}') 
                     print()
                     print(f'Comandos inválidos: {comando_invalido_quest2}')
@@ -194,11 +197,19 @@ def quests():
                     print(f'Hora final: {fim_hora_quest_3}:{fim_minuto_quest_3}:{fim_segundo_quest_3}')
                     print()
                     print(f'Resposta da Questão: {res3}')
-                    print(f'Potuação Atual: {pontuacao_quest3}')
+                    print(f'Potuação Questão: {pontuacao_quest3}')
                     print(f'Resposta própria: {pessoal_quest3}') 
                     print()
                     print(f'Comandos inválidos: {comando_invalido_quest3}')
                     print('=' *51)
+                    plt.title('Gráfico de pontuação')
+                    plt.bar(1, pontuacao_quest1, label = 'Questão 1')
+                    plt.bar(2, pontuacao_quest2, label = 'Questão 2')
+                    plt.bar(3, pontuacao_quest3, label = 'Questão 3')
+                    plt.xlabel('Questões')
+                    plt.ylabel('Pontuação')
+                    plt.legend()
+                    plt.show()
                     exit()
                 else:
                     print('Senha inválida!')

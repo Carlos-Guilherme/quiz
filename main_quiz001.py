@@ -1,6 +1,7 @@
 import time
 import all_quests
 
+
 loop = 'voltar ao inicio'
 while loop == 'voltar ao inicio':  # Ponto de restauração
     print('=' *51)
